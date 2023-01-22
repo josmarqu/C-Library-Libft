@@ -6,7 +6,7 @@
 /*   By: josepc <josepc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 16:25:23 by josmarqu          #+#    #+#             */
-/*   Updated: 2023/01/22 16:33:55 by josepc           ###   ########.fr       */
+/*   Updated: 2023/01/22 16:37:42 by josepc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ int	ft_strlcat(char *dest, const char *src, int destsize)
 	int	len;
 
 	c = ft_strlen(dest);
-	if (destsize < c)
-		return (c + destsize);
+	if (destsize <= c)
+		return (destsize + ft_strlen(src));
 	len = c + ft_strlen(src);
 	dest += c;
 	while (c++ < destsize - 1)
