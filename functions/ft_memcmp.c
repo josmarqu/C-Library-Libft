@@ -6,25 +6,24 @@
 /*   By: joselaptop <joselaptop@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 09:29:27 by joselaptop        #+#    #+#             */
-/*   Updated: 2023/01/24 09:38:57 by joselaptop       ###   ########.fr       */
+/*   Updated: 2023/01/24 13:02:30 by joselaptop       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-	int		ft_memcmp(const void *s1, const void *s2, int n)
-	{
 
-	}
-*/
-
-// test memcmp
-#include <bsd/stdio.h>
-#include <bsd/string.h>
-
-int	main(void)
+int	ft_memcmp(const void *s1, const void *s2, int n)
 {
-	char str1[] = "Hello";
-	char str2[] = "Hillo";
+	unsigned char	*s1copy;
+	unsigned char	*s2copy;
 
-	printf("%d\n", strncmp(str1, str2, 1));
+	s1copy = (unsigned char *) s1;
+	s2copy = (unsigned char *) s2;
+	while (n--)
+	{
+		if (*s1copy != *s2copy)
+			return (*s1copy - *s2copy);
+		s1copy++;
+		s2copy++;
+	}
+	return (0);
 }
