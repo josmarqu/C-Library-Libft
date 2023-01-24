@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoic.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: josmarqu <josmarqu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: josepc <josepc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 16:31:00 by josmarqu          #+#    #+#             */
-/*   Updated: 2023/01/24 17:30:38 by josmarqu         ###   ########.fr       */
+/*   Updated: 2023/01/24 19:28:39 by josepc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,64 +14,29 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int	ft_strlen(const char *s)
-{
-	int	c;
+int	ft_strlen(const char *s);
 
-	c = 0;
-	while (s[c])
-		c++;
-	return (c);
-}
+int	ft_isdigit(int c);
 
-int	ft_isdigit(int c)
+int	ft_atoi(const char *nptr)
 {
-	if (c >= '0' && c <= '9')
-	{
-		return (1);
-	}
-	else
-	{
-		return (0);
-	}
-}
-
-int		ft_atoi(const char *nptr)
-{
-	char	*s;
 	char	sign;
 	int		r;
 
-	s = (char *) nptr;
 	sign = 1;
 	r = 0;
-
-	if (*s == '-')
+	if (*nptr == '-')
 	{
 		sign = -1;
-		s++;
+		nptr++;
 	}
-	else if (*s == '+')
-		s++;
-	while (*s != 0)
+	else if (*nptr == '+')
+		nptr++;
+	while (*nptr != 0 && ft_isdigit(*nptr))
 	{
-		if (ft_isdigit(*s))
-			r += *s - '0';
-		else
-		{
-			r /= 10;	
-			break;
-		}
+		r += *nptr - '0';
 		r *= 10;
-		s++;
+		nptr++;
 	}
-	return (r * sign);
-}
-
-int	main(void)
-{	
-	char *s = "+43-0";
-	printf("ft_atoi: %d\n", ft_atoi(s));
-	printf("atoi: %d\n", atoi(s));
-	return (0);
+	return ((r * sign) / 10);
 }
