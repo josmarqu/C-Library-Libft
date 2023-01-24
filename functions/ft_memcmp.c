@@ -6,10 +6,9 @@
 /*   By: joselaptop <joselaptop@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 09:29:27 by joselaptop        #+#    #+#             */
-/*   Updated: 2023/01/24 13:02:30 by joselaptop       ###   ########.fr       */
+/*   Updated: 2023/01/24 13:04:38 by joselaptop       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 int	ft_memcmp(const void *s1, const void *s2, int n)
 {
