@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: josmarqu <josmarqu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: josepc <josepc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 18:23:15 by josmarqu          #+#    #+#             */
-/*   Updated: 2023/01/14 19:11:49 by josmarqu         ###   ########.fr       */
+/*   Updated: 2023/01/25 18:31:10 by josepc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_strlcpy(char *dest, const char *src, int destsize)
 
 	c = ft_strlen(src);
 	n = c;
-	if (c > destsize)
+	if (destsize > c)
 		c = destsize;
 	while (c-- > 1)
 		*dest++ = *src++;
