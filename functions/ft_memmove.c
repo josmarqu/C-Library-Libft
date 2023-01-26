@@ -3,27 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: joselaptop <joselaptop@student.42.fr>      +#+  +:+       +#+        */
+/*   By: josepc <josepc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 11:12:27 by jose              #+#    #+#             */
-/*   Updated: 2023/01/26 11:47:37 by joselaptop       ###   ########.fr       */
+/*   Updated: 2023/01/26 17:54:30 by josepc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	*ft_memmove(void *dest, const void *source, int n)
 {
-	char		*dst;
-	const char	*src;
+	unsigned char		*dest_copy;
+	unsigned const char	*source_copy;
 
 	if (n == 0 || dest == source)
 		return (dest);
-	dst = (char *) dest;
-	src = (const char *) source;
-	if (dst < src)
+	dest_copy = (unsigned char *) dest;
+	source_copy = (unsigned const char *) source;
+	if (dest_copy < source_copy)
 		while (n--)
-			*dst++ = *src++;
+			*dest_copy++ = *source_copy++;
 	else
 		while (n--)
-			*(dst + n) = *(src + n);
+			*(dest_copy + n) = *(source_copy + n);
 	return (dest);
 }
