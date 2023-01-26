@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: josmarqu <josmarqu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: joselaptop <joselaptop@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 15:00:22 by josmarqu          #+#    #+#             */
-/*   Updated: 2023/01/12 15:47:22 by josmarqu         ###   ########.fr       */
+/*   Updated: 2023/01/26 10:40:09 by joselaptop       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 */
 
 /**********************************************
-    Functions that check the validity
+    Functions that determine compliance with the ASCII standard.
 **********************************************/
 
 /* Check if alphabetic */
@@ -37,11 +37,8 @@ int		ft_isascii(int c);
 int		ft_isprint(int c);
 
 /**********************************************
-    Functions that handle pointers/memory area
+    Functions that handle memory locations
 **********************************************/
-
-/* Returns the length of the given null-terminated string */
-int		ft_strlen(const char *s);
 
 /*
   Fills the first n bytes of the memory area 
@@ -49,19 +46,32 @@ int		ft_strlen(const char *s);
 */
 void	*ft_memset(void *s, int c, int n);
 
-/* Sets the first n bytes of the memory area pointed to s to zero */
-void	ft_bzero(void *s, int n);
-
 /*
   Copies n bytes from memory area src to memory area dest
 */
 void	*ft_memcpy(void *dest, const void *src, int n);
+
+/* Sets the first n bytes of the memory area pointed to s to zero */
+void	ft_bzero(void *s, int n);
 
 /*
   Copies n bytes from memory area src to memory area dest.
   The memory areas may overlap
 */
 void	*ft_memmove(void *dest, const void *src, int n);
+
+/* Scans memory for c, returns pointer to first occurrence or NULL */
+void	*ft_memchr(const void *s, int c, int n);
+
+/* Compares n bytes of memory at s1 and s2 */
+int		ft_memcmp(const void *s1, const void *s2, int n);
+
+/**********************************************
+    Functions that handle strings
+**********************************************/
+
+/* Returns the length of the given null-terminated string */
+int		ft_strlen(const char *s);
 
 /*
   Copies src to string dest of size destsize. 
@@ -87,12 +97,6 @@ char	*ft_strrchr(const char *s, int c);
 
 /* Compares at most n characters of s1 and s2 */
 int		ft_strncmp(const char *s1, const char *s2, int n);
-
-/* Scans memory for c, returns pointer to first occurrence or NULL */
-void	*ft_memchr(const void *s, int c, int n);
-
-/* Compares n bytes of memory at s1 and s2 */
-int		ft_memcmp(const void *s1, const void *s2, int n);
 
 /* Searches for the first occurrence of the
  substring needle in the string haystack */
