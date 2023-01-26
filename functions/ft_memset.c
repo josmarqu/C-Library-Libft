@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: josmarqu <josmarqu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: joselaptop <joselaptop@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 17:57:20 by josmarqu          #+#    #+#             */
-/*   Updated: 2023/01/14 18:18:31 by josmarqu         ###   ########.fr       */
+/*   Updated: 2023/01/26 11:47:50 by joselaptop       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	*ft_memset(void *s, int c, int n)
 {
-	unsigned char	*cp;
+	char	*cp;
 
 	cp = s;
 	while (n--)
