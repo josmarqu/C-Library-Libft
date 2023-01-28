@@ -3,20 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: josmarqu <josmarqu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: josepc <josepc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 19:03:24 by josmarqu          #+#    #+#             */
-/*   Updated: 2023/01/21 19:29:27 by josmarqu         ###   ########.fr       */
+/*   Updated: 2023/01/28 16:45:08 by josepc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strchr(const char *s, int c)
 {
-	char	*scopy;
+	char	*s_copy;
 
-	scopy = (char *) s;
-	while (*scopy++ != 0)
-		if (*scopy == c)
-			return (scopy);
+	s_copy = (char *) s;
+	while (*s_copy)
+	{
+		if (*s_copy == c)
+			return (s_copy);
+		s_copy++;
+	}
 	return (0);
 }

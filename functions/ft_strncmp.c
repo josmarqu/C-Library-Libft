@@ -3,17 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: joselaptop <joselaptop@student.42.fr>      +#+  +:+       +#+        */
+/*   By: josepc <josepc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 12:01:54 by joselaptop        #+#    #+#             */
-/*   Updated: 2023/01/23 12:12:46 by joselaptop       ###   ########.fr       */
+/*   Updated: 2023/01/28 16:51:58 by josepc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_strncmp(const char *s1, const char *s2, int n)
 {
-	while (n-- && *s1++ != 0 && *s2++ != 0)
+	while (n-- && *s1 && *s2)
+	{
 		if (*s1 != *s2)
 			return (*s1 - *s2);
+		s1++;
+		s2++;
+	}
 	return (0);
 }

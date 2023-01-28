@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: josmarqu <josmarqu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: josepc <josepc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 13:08:07 by joselaptop        #+#    #+#             */
-/*   Updated: 2023/01/24 16:26:38 by josmarqu         ###   ########.fr       */
+/*   Updated: 2023/01/28 16:55:48 by josepc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,25 @@ int	ft_strlen(const char *str);
 
 char	*ft_strnstr(const char *haystack, const char *needle, int len)
 {
-	int		ch_counter;
-	int		f_len;
-	char	*s;
-	char	*f;
+	unsigned int	ch_counter;
+	unsigned int	n_len;
+	char			*h;
+	char			*n;
 
 	ch_counter = 0;
-	f_len = ft_strlen(needle);
-	s = (char *) haystack;
-	f = (char *) needle;
-	while (len-- && ch_counter != f_len)
+	n_len = ft_strlen(needle);
+	h = (char *) haystack;
+	n = (char *) needle;
+	while (len-- && ch_counter != n_len)
 	{
-		if (*s == *f)
+		if (*h == *n)
 		{
 			ch_counter += 1;
-			f++;
+			n++;
 		}
-			s++;
+			h++;
 	}
-	if (ch_counter == f_len)
-		return (s - ch_counter);
+	if (ch_counter == n_len)
+		return (h - ch_counter);
 	return (0);
 }
