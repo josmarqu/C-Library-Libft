@@ -6,7 +6,7 @@
 /*   By: joselaptop <joselaptop@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 15:00:22 by josmarqu          #+#    #+#             */
-/*   Updated: 2023/01/30 11:04:35 by joselaptop       ###   ########.fr       */
+/*   Updated: 2023/01/30 12:35:27 by joselaptop       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,9 +106,13 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 /* Converts string to int */
 int		ft_atoi(const char *nptr);
 
-/* Creates a substring where s pointing to start
- is copied up to len*/
+/* Reserve memory with malloc and creates a substring 
+ where s pointing to startis copied up to len*/
 char	*ft_substr(char const *s, unsigned int start, size_t len);
+
+/* Reserve memory with malloc and return a string 
+ formed by the concatenation of s1 and s2. */
+char	*ft_strjoin(char const *s1, char const *s2);
 
 /******************************************
     Functions that convert letters
