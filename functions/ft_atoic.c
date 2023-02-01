@@ -3,21 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoic.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: josepc <josepc@student.42.fr>              +#+  +:+       +#+        */
+/*   By: joselaptop <joselaptop@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 16:31:00 by josmarqu          #+#    #+#             */
-/*   Updated: 2023/01/26 17:08:37 by josepc           ###   ########.fr       */
+/*   Updated: 2023/02/01 09:16:56 by joselaptop       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// test ft_atoi
-#include <stdio.h>
-#include <stdlib.h>
 
-int	ft_isdigit(int c)
-{
-	return (c >= '0' && c <= '9');
-}
+int	ft_isdigit(int c);
 
 int	ft_isspace(int c)
 {
