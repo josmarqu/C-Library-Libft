@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: joselaptop <joselaptop@student.42.fr>      +#+  +:+       +#+        */
+/*   By: josmarqu <josmarqu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/30 11:06:06 by joselaptop        #+#    #+#             */
-/*   Updated: 2023/01/30 12:07:23 by joselaptop       ###   ########.fr       */
+/*   Created: 2023/02/01 09:27:39 by josmarqu          #+#    #+#             */
+/*   Updated: 2023/02/01 09:27:43 by josmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

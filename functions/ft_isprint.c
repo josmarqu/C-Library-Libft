@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: joselaptop <joselaptop@student.42.fr>      +#+  +:+       +#+        */
+/*   By: josmarqu <josmarqu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/13 09:00:14 by jose              #+#    #+#             */
-/*   Updated: 2023/01/26 11:27:55 by joselaptop       ###   ########.fr       */
+/*   Created: 2023/02/01 09:22:05 by josmarqu          #+#    #+#             */
+/*   Updated: 2023/02/01 09:22:10 by josmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
