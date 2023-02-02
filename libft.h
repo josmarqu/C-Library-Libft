@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: josmarqu <josmarqu@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: josmarqu <josmarqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 15:00:22 by josmarqu          #+#    #+#             */
-/*   Updated: 2023/02/01 10:44:11 by josmarqu         ###   ########.fr       */
+/*   Updated: 2023/02/02 15:19:49 by josmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
-#define LIBFT_H
-#include <stddef.h>
+# define LIBFT_H
+# include <stddef.h>
 
 /*
   Reimplementation of C original functions.
@@ -23,19 +23,19 @@
 **********************************************/
 
 /* Check if alphabetic */
-int ft_isalpha(int c);
+int			ft_isalpha(int c);
 
 /* Check if digit */
-int ft_isdigit(int c);
+int			ft_isdigit(int c);
 
 /* Check if alphanumeric */
-int ft_isalnum(int c);
+int			ft_isalnum(int c);
 
 /* Check if ASCII */
-int ft_isascii(int c);
+int			ft_isascii(int c);
 
 /* Check if printable */
-int ft_isprint(int c);
+int			ft_isprint(int c);
 
 /**********************************************
 	Functions that handle memory locations
@@ -45,34 +45,34 @@ int ft_isprint(int c);
   Fills the first n bytes of the memory area
   pointed to s with the constant byte c
 */
-void *ft_memset(void *s, int c, size_t n);
+void		*ft_memset(void *s, int c, size_t n);
 
 /*
   Copies n bytes from memory area src to memory area dest
 */
-void *ft_memcpy(void *dest, const void *src, size_t n);
+void		*ft_memcpy(void *dest, const void *src, size_t n);
 
 /* Sets the first n bytes of the memory area pointed to s to zero */
-void ft_bzero(void *s, size_t n);
+void		ft_bzero(void *s, size_t n);
 
 /*
   Copies n bytes from memory area src to memory area dest.
   The memory areas may overlapq
 */
-void *ft_memmove(void *dest, const void *src, size_t n);
+void		*ft_memmove(void *dest, const void *src, size_t n);
 
 /* Scans memory for c, returns pointer to first occurrence or NULL */
-void *ft_memchr(const void *s, int c, size_t n);
+void		*ft_memchr(const void *s, int c, size_t n);
 
 /* Compares n bytes of memory at s1 and s2 */
-int ft_memcmp(const void *s1, const void *s2, size_t n);
+int			ft_memcmp(const void *s1, const void *s2, size_t n);
 
 /**********************************************
 	Functions that handle strings
 **********************************************/
 
 /* Returns the length of the given null-terminated string */
-int ft_strlen(const char *s);
+int			ft_strlen(const char *s);
 
 /*
   Copies src to string dest of size destsize.
@@ -80,7 +80,7 @@ int ft_strlen(const char *s);
   and dest will always be null-terminated
   returns total length of the string it tried to create
 */
-int ft_strlcpy(char *dest, const char *src, size_t size);
+int			ft_strlcpy(char *dest, const char *src, size_t size);
 
 /*
   Appends src to string dest of size destsize.
@@ -88,46 +88,46 @@ int ft_strlcpy(char *dest, const char *src, size_t size);
   and dest will always be null-terminated
   returns total length of the string it tried to create
 */
-int ft_strlcat(char *dest, const char *src, size_t size);
+int			ft_strlcat(char *dest, const char *src, size_t size);
 
 /* Returns pointer to first occurrence of c in s, or NULL if not found */
-char *ft_strchr(const char *s, int c);
+char		*ft_strchr(const char *s, int c);
 
 /* Returns pointer to last occurrence of c in s, or NULL if not found */
-char *ft_strrchr(const char *s, int c);
+char		*ft_strrchr(const char *s, int c);
 
 /* Compares at most n characters of s1 and s2 */
-int ft_strncmp(const char *s1, const char *s2, size_t n);
+int			ft_strncmp(const char *s1, const char *s2, size_t n);
 
 /* Searches for the first occurrence of the
  substring needle in the string haystack */
-char *ft_strnstr(const char *haystack, const char *needle, size_t len);
+char		*ft_strnstr(const char *haystack, const char *needle, size_t len);
 
 /* Converts string to int */
-int ft_atoi(const char *nptr);
+int			ft_atoi(const char *nptr);
 
 /* Reserve memory with malloc and creates a substring
  where s pointing to start is copied up to len*/
-char *ft_substr(char const *s, unsigned int start, size_t len);
+char		*ft_substr(char const *s, unsigned int start, size_t len);
 
 /* Reserve memory with malloc and return a string
  formed by the concatenation of s1 and s2. */
-char *ft_strjoin(char const *s1, char const *s2);
+char		*ft_strjoin(char const *s1, char const *s2);
 
 /* Delete all the set characters that are equal to s1
  until a different character is found and return the string
  with malloc memory reserve*/
-char *ft_strtrim(char const *s1, char const *set);
+char		*ft_strtrim(char const *s1, char const *set);
 
 /******************************************
 	Functions that convert letters
 ******************************************/
 
 /* Converts lowercase letter to uppercase */
-int ft_toupper(int c);
+int			ft_toupper(int c);
 
 /* Converts uppercase letter to lowercase */
-int ft_tolower(int c);
+int			ft_tolower(int c);
 
 /******************************************
 	Functions that allocate memory
@@ -135,10 +135,10 @@ int ft_tolower(int c);
 
 /* Allocates memory for an array of n elements, each of size bytes,
  and returns a pointer to the allocated memory */
-void *ft_calloc(size_t nmemb, size_t size);
+void		*ft_calloc(size_t nmemb, size_t size);
 
 /* Allocates sufficient memory for a copy of the string s,
  does the copy, and returns a pointer to it */
-char *ft_strdup(const char *s);
+char		*ft_strdup(const char *s);
 
 #endif
