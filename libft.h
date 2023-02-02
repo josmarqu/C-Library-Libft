@@ -6,7 +6,7 @@
 /*   By: josmarqu <josmarqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 15:00:22 by josmarqu          #+#    #+#             */
-/*   Updated: 2023/02/02 15:22:29 by josmarqu         ###   ########.fr       */
+/*   Updated: 2023/02/02 15:29:15 by josmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,10 @@ void		*ft_memchr(const void *s, int c, size_t n);
 /* Compares n bytes of memory at s1 and s2 */
 int			ft_memcmp(const void *s1, const void *s2, size_t n);
 
+/* Allocates memory for an array of n elements, each of size bytes,
+ and returns a pointer to the allocated memory */
+void		*ft_calloc(size_t nmemb, size_t size);
+
 /**********************************************
 	Functions that handle strings
 **********************************************/
@@ -119,6 +123,10 @@ char		*ft_strjoin(char const *s1, char const *s2);
  with malloc memory reserve*/
 char		*ft_strtrim(char const *s1, char const *set);
 
+/* Allocates sufficient memory for a copy of the string s,
+ does the copy, and returns a pointer to it */
+char		*ft_strdup(const char *s);
+
 /******************************************
 	Functions that convert letters
 ******************************************/
@@ -128,17 +136,4 @@ int			ft_toupper(int c);
 
 /* Converts uppercase letter to lowercase */
 int			ft_tolower(int c);
-
-/******************************************
-	Functions that allocate memory
-******************************************/
-
-/* Allocates memory for an array of n elements, each of size bytes,
- and returns a pointer to the allocated memory */
-void		*ft_calloc(size_t nmemb, size_t size);
-
-/* Allocates sufficient memory for a copy of the string s,
- does the copy, and returns a pointer to it */
-char		*ft_strdup(const char *s);
-
 #endif
