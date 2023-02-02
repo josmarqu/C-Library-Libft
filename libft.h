@@ -6,7 +6,7 @@
 /*   By: josmarqu <josmarqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 15:00:22 by josmarqu          #+#    #+#             */
-/*   Updated: 2023/02/02 15:29:15 by josmarqu         ###   ########.fr       */
+/*   Updated: 2023/02/02 15:39:51 by josmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,22 +110,25 @@ char		*ft_strnstr(const char *haystack, const char *needle, size_t len);
 /* Converts string to int */
 int			ft_atoi(const char *nptr);
 
-/* Reserve memory with malloc and creates a substring
+/* Reserve memory using malloc and creates a substring
  where s pointing to start is copied up to len*/
 char		*ft_substr(char const *s, unsigned int start, size_t len);
 
-/* Reserve memory with malloc and return a string
+/* Reserve enoough memory using malloc and return a string
  formed by the concatenation of s1 and s2. */
 char		*ft_strjoin(char const *s1, char const *s2);
 
-/* Delete all the set characters that are equal to s1
- until a different character is found and return the string
- with malloc memory reserve*/
+/* Reserve enough memory using malloc for a string that 
+ is the result of deleting the set characters in the start and end of s1 */
 char		*ft_strtrim(char const *s1, char const *set);
 
-/* Allocates sufficient memory for a copy of the string s,
+/* Reserve enough memory using malloc for a copy of the string s,
  does the copy, and returns a pointer to it */
 char		*ft_strdup(const char *s);
+
+/* Reserve enough memory using malloc and return a strings array
+ splited using the character c as a delimiter */
+char		**ft_split(char const *s, char c);
 
 /******************************************
 	Functions that convert letters
