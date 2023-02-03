@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: josmarqu <josmarqu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: josmarqu <josmarqu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 15:23:15 by josmarqu          #+#    #+#             */
-/*   Updated: 2023/02/02 18:27:55 by josmarqu         ###   ########.fr       */
+/*   Updated: 2023/02/03 12:12:47 by josmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,11 +55,11 @@ int	split_count(char const *s, char c)
 	count = 0;
 	while (s[i])
 	{
-		if (s[i] == c && s[i + 1] != c && s[i + 1] != 0)
+		if (s[i] == c && s[i - 1] != c)
 			count++;
 		i++;
 	}
-	return (count);
+	return (count + 1);
 }
 
 char	*ft_strchr(const char *s, int c)
@@ -101,32 +101,37 @@ char	**ft_split(char const *s, char c)
 	unsigned int 	i;
 	unsigned int	j;
 	char			**split;
-		
+
+	if (*s == '\0')
+		return (0);
+	s = ft_strtrim(s, &c);
 	s_count = split_count(s, c);
 	s_start = 0;
 	i = 0;
 	j = 0;
 	split = (char **)malloc(sizeof(char *) * s_count + 1);
 
-	s = ft_strtrim(s, &c);
 	while (s[i])
 	{
-		if ((s[i] == c && s[i + 1] != c) || s[i + 1] == 0)
+		if (s[i] == c && s[i-1] != c)
 		{
 			split[j] = ft_substr(s, s_start, i - s_start);
-			s_start = i + 1;
 			j++;
+			s_start = i + 1;
 		}
+		else if (i >= 1 && s[i-1] == c)
+			s_start = i;
 		i++;
 	}
+	split[j] = ft_substr(s, s_start, i - s_start);
 	return (split);
 }
 
 // test ft_split
 int	main(void)
 {
-	char *s = "phepllopwoprldp";
-	char c = 'p';
+	char *s = "\0php\0llopppppwoprldp";
+	char c = '\0';
 	char **split = ft_split(s, c);
 	//print **split
 	while (*split)
