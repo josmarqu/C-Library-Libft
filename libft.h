@@ -6,7 +6,7 @@
 /*   By: josmarqu <josmarqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 15:00:22 by josmarqu          #+#    #+#             */
-/*   Updated: 2023/02/05 17:24:52 by josmarqu         ###   ########.fr       */
+/*   Updated: 2023/02/05 17:43:31 by josmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,8 +134,13 @@ char		*ft_strdup(const char *s);
 char		**ft_split(char const *s, char c);
 
 /* Apply the function f to each character of the string passed as argument
- to create a new string resulting from successive applications of f */
+ to create a new string resulting from successive applications of f with the given
+ s character index and the respective character*/
 char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+
+/* Apply the function f to each character of the string passed as argument with the given
+ character index and character address*/
+void		*ft_striteri(char *s, void (*f)(unsigned int, char *));
 
 /******************************************
 	Functions that convert letters
