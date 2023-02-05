@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: josmarqu <josmarqu@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: josmarqu <josmarqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 15:00:22 by josmarqu          #+#    #+#             */
-/*   Updated: 2023/02/03 19:44:27 by josmarqu         ###   ########.fr       */
+/*   Updated: 2023/02/05 17:24:52 by josmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,6 +132,10 @@ char		*ft_strdup(const char *s);
 /* Reserve enough memory using malloc and return a strings array
  splited using the character c as a delimiter */
 char		**ft_split(char const *s, char c);
+
+/* Apply the function f to each character of the string passed as argument
+ to create a new string resulting from successive applications of f */
+char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
 /******************************************
 	Functions that convert letters
