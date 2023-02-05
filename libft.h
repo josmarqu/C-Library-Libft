@@ -6,7 +6,7 @@
 /*   By: josmarqu <josmarqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 15:00:22 by josmarqu          #+#    #+#             */
-/*   Updated: 2023/02/05 17:43:31 by josmarqu         ###   ########.fr       */
+/*   Updated: 2023/02/05 17:49:58 by josmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -151,4 +151,12 @@ int			ft_toupper(int c);
 
 /* Converts uppercase letter to lowercase */
 int			ft_tolower(int c);
+
+/******************************************
+	Functions that handle files
+******************************************/
+
+/* Sends the character c to the given file descriptor */
+void		ft_putchar_fd(char c, int fd);
+
 #endif
