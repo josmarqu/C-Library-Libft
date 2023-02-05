@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: josmarqu <josmarqu@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: josmarqu <josmarqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 09:25:37 by josmarqu          #+#    #+#             */
-/*   Updated: 2023/02/01 09:25:40 by josmarqu         ###   ########.fr       */
+/*   Updated: 2023/02/05 18:42:50 by josmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_strlen(const char *s);
 
-int	ft_strlcpy(char *dest, const char *src, int destsize)
+int	ft_strlcpy(char *dest, const char *src, size_t destsize)
 {
 	unsigned int	src_len;
 

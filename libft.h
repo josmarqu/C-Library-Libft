@@ -6,7 +6,7 @@
 /*   By: josmarqu <josmarqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 15:00:22 by josmarqu          #+#    #+#             */
-/*   Updated: 2023/02/05 18:08:01 by josmarqu         ###   ########.fr       */
+/*   Updated: 2023/02/05 18:47:53 by josmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,12 +45,12 @@ int			ft_isprint(int c);
   Fills the first n bytes of the memory area
   pointed to s with the constant byte c
 */
-void		*ft_memset(void *s, int c, size_t n);
+void		*ft_memset(void *b, int c, size_t len);
 
 /*
   Copies n bytes from memory area src to memory area dest
 */
-void		*ft_memcpy(void *dest, const void *src, size_t n);
+void		*ft_memcpy(void *dest, const void *src, size_t len);
 
 /* Sets the first n bytes of the memory area pointed to s to zero */
 void		ft_bzero(void *s, size_t n);
@@ -84,7 +84,7 @@ int			ft_strlen(const char *s);
   and dest will always be null-terminated
   returns total length of the string it tried to create
 */
-int			ft_strlcpy(char *dest, const char *src, size_t size);
+int			ft_strlcpy(char *dest, const char *src, size_t destsize);
 
 /*
   Appends src to string dest of size destsize.
@@ -92,7 +92,7 @@ int			ft_strlcpy(char *dest, const char *src, size_t size);
   and dest will always be null-terminated
   returns total length of the string it tried to create
 */
-int			ft_strlcat(char *dest, const char *src, size_t size);
+int			ft_strlcat(char *dest, const char *src, size_t destsize);
 
 /* Returns pointer to first occurrence of c in s, or NULL if not found */
 char		*ft_strchr(const char *s, int c);
