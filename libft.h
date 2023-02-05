@@ -6,7 +6,7 @@
 /*   By: josmarqu <josmarqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 15:00:22 by josmarqu          #+#    #+#             */
-/*   Updated: 2023/02/05 18:06:40 by josmarqu         ###   ########.fr       */
+/*   Updated: 2023/02/05 18:08:01 by josmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -165,4 +165,8 @@ void		ft_putstr_fd(char *s, int fd);
 /* Sends the string s to the given file descriptor,
  followed by a newline */
 void		ft_putendl_fd(char *s, int fd);
+
+/* Sends the integer n to the given file descriptor */
+void		ft_putnbr_fd(int n, int fd);
+
 #endif
