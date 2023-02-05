@@ -6,7 +6,7 @@
 /*   By: josmarqu <josmarqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 15:00:22 by josmarqu          #+#    #+#             */
-/*   Updated: 2023/02/05 17:49:58 by josmarqu         ###   ########.fr       */
+/*   Updated: 2023/02/05 17:58:34 by josmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -159,4 +159,6 @@ int			ft_tolower(int c);
 /* Sends the character c to the given file descriptor */
 void		ft_putchar_fd(char c, int fd);
 
+/* Sends the string s to the given file descriptor */
+void		ft_putstr_fd(char *s, int fd);
 #endif
