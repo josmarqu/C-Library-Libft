@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: josmarqu <josmarqu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: josmarqu <josmarqu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 09:26:26 by josmarqu          #+#    #+#             */
-/*   Updated: 2023/02/05 18:46:16 by josmarqu         ###   ########.fr       */
+/*   Updated: 2023/02/06 18:50:23 by josmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(const char *str);
+#include "libft.h"
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {

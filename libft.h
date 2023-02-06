@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: josmarqu <josmarqu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: josmarqu <josmarqu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 15:00:22 by josmarqu          #+#    #+#             */
-/*   Updated: 2023/02/05 18:47:53 by josmarqu         ###   ########.fr       */
+/*   Updated: 2023/02/06 18:32:16 by josmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,159 +14,347 @@
 # define LIBFT_H
 # include <stddef.h>
 
-/*
-  Reimplementation of C original functions.
-*/
-
 /**********************************************
-	Functions that determine compliance with the ASCII standard.
-**********************************************/
+ * Check functions
+ **********************************************/
 
-/* Check if alphabetic */
+/**
+ * @brief Check if the character is alphabetic. 
+ * 
+ * @param c The character to check.
+ * @return 1 if the character is alphabetic, 0 otherwise.
+ */
 int			ft_isalpha(int c);
 
-/* Check if digit */
+/**
+ * @brief Check if the character is a digit. 
+ * 
+ * @param c The character to check.
+ * @return 1 if the character is a digit, 0 otherwise. 
+ */
 int			ft_isdigit(int c);
 
-/* Check if alphanumeric */
+/**
+ * @brief Check if the character is alphanumeric. 
+ * 
+ * @param c The character to check.
+ * @return 1 if the character is alphanumeric, 0 otherwise.
+ */
 int			ft_isalnum(int c);
 
-/* Check if ASCII */
+/**
+ * @brief  Check if the character is an ASCII character in the range 0 to 127.
+ * 
+ * @param c  The character to check.
+ * @return 1 if the character is an ASCII character, 0 otherwise. 
+ */
 int			ft_isascii(int c);
 
-/* Check if printable */
+/**
+ * @brief Check if the character is printable. 
+ * 
+ * @param c The character to check.
+ * @return 1 if the character is printable, 0 otherwise. 
+ */
 int			ft_isprint(int c);
 
 /**********************************************
-	Functions that handle memory locations
-**********************************************/
+ * Memory functions
+ **********************************************/
 
-/*
-  Fills the first n bytes of the memory area
-  pointed to s with the constant byte c
-*/
-void		*ft_memset(void *b, int c, size_t len);
+/**
+ * @brief Fills 'n' bytes of the memory area pointed to by 's'
+ * with the constant byte 'c'. 
+ * 
+ * @param b  The memory area to fill.
+ * @param c  The constant byte to fill the memory area with.
+ * @param n The number of bytes to fill. 
+ * @return Pointer to 's'.
+ */
+void		*ft_memset(void *s, int c, size_t n);
 
-/*
-  Copies n bytes from memory area src to memory area dest
-*/
-void		*ft_memcpy(void *dest, const void *src, size_t len);
+/**
+ * @brief Copies 'n' bytes of the memory area 'src' to memory area 'dest'.  
+ * 
+ * @param dest The destination memory area.
+ * @param src The source memory area.	 
+ * @param n The number of bytes to fill. 
+ * @return  Pointer to 'dest'.
+ */
+void		*ft_memcpy(void *dest, const void *src, size_t n);
 
-/* Sets the first n bytes of the memory area pointed to s to zero */
+/**
+ * @brief Set 'n' bytes of the memory area pointed to by 's' to zero. 
+ * 
+ * @param s The memory area to fill.
+ * @param n The number of bytes to fill.
+ */
 void		ft_bzero(void *s, size_t n);
 
-/*
-  Copies n bytes from memory area src to memory area dest.
-  The memory areas may overlapq
-*/
+/**
+ * @brief  Copies using a tempory array 'n' bytes from memory area 'src'
+ * to memory area 'dest', memory areas may overlap.
+ * 
+ * @param dest The destination memory area.
+ * @param src The source memory area.
+ * @param n The number of bytes to copy. 
+ * @return Pointer to 'dest'.
+ */
 void		*ft_memmove(void *dest, const void *src, size_t n);
 
-/* Scans memory for c, returns pointer to first occurrence or NULL */
+/**
+ * @brief Searches into memory area 's' for the first occurrence of the byte 'c'
+ * up to 'n' bytes.
+ *
+ * @param s The memory area to search.
+ * @param c The byte to search for. 
+ * @param n The number of bytes to search.
+ * @return Pointer to the first occurrence of the byte 'c' in memory area 's' 
+ * or NULL if not found.
+ */
 void		*ft_memchr(const void *s, int c, size_t n);
 
-/* Compares n bytes of memory at s1 and s2 */
+/**
+ * @brief Compares the first 'n' bytes of the memory areas 's1' and 's2'.
+ * 
+ * @param s1 The first memory area. 
+ * @param s2 The second memory area. 
+ * @param n The number of bytes to compare.
+ * @return 0 if the first 'n' bytes of 's1' and 's2' are equal, otherwise
+ * returns the difference between the first two different bytes.
+ */
 int			ft_memcmp(const void *s1, const void *s2, size_t n);
 
-/* Allocates memory for an array of n elements, each of size bytes,
- and returns a pointer to the allocated memory */
+/**
+ * @brief Allocates memory for an array of 'nmemb' elements of 'size' bytes each,
+ * initialize all its bits to zero.
+ * 
+ * @param nmemb Number of elements.
+ * @param size Size of each element. 
+ * @return Pointer to the allocated memory. 
+ */
 void		*ft_calloc(size_t nmemb, size_t size);
 
 /**********************************************
-	Functions that handle strings
-**********************************************/
+ * String functions
+ **********************************************/
 
-/* Returns the length of the given null-terminated string */
+/**
+ * @brief Counts the number of characters in the null-terminated string 's'
+ * up to the first null character.
+ * 
+ * @param s The null-terminated string to count. 
+ * @return The number of characters in the string 's'.
+ */
 int			ft_strlen(const char *s);
 
-/*
-  Copies src to string dest of size destsize.
-  If src is longer than destsize, it will be truncated
-  and dest will always be null-terminated
-  returns total length of the string it tried to create
-*/
+/**
+ * @brief Copies up to 'destsize' - 1 characters from the null-terminated
+ * string 'src' to 'dest', null-terminating the result.
+ * 
+ * @param dest The destination null-terminated string.
+ * @param src The source null-terminated string.
+ * @param destsize The size of the null-terminated destination string.
+ * @return The total length of the string it tried to create. 
+ */
 int			ft_strlcpy(char *dest, const char *src, size_t destsize);
 
-/*
-  Appends src to string dest of size destsize.
-  It will append at most dstsize - strlen(dest) - 1 bytes.
-  and dest will always be null-terminated
-  returns total length of the string it tried to create
-*/
+/**
+ * @brief Appends the null-terminated string 'src' to 'dest',
+ * null-terminating the result.
+ * 
+ * @param dest The destination null-terminated string. 
+ * @param src The source null-terminated string. 
+ * @param destsize The size of the destination string. 
+ * @return The total length of the string it tried to create. 
+ */
 int			ft_strlcat(char *dest, const char *src, size_t destsize);
 
-/* Returns pointer to first occurrence of c in s, or NULL if not found */
+/**
+ * @brief Locate the first occurrence of the character 'c' in the
+ * null-terminated string 's'.
+ * 
+ * @param s The null-terminated string to search.
+ * @param c The character to search for.
+ * @return Pointer to the first occurrence of the character 'c' in the string 's,
+ * or NULL if not found.
+ */
 char		*ft_strchr(const char *s, int c);
 
-/* Returns pointer to last occurrence of c in s, or NULL if not found */
+/**
+ * @brief Locate the last occurrence of the character 'c' in the
+ * null-terminated string 's'. 
+ * 
+ * @param s The null-terminated string to search.
+ * @param c The character to search for.
+ * @return Pointer to the last occurrence of the character 'c' in the string 's',
+ * or NULL if not found. 
+ */
 char		*ft_strrchr(const char *s, int c);
 
-/* Compares at most n characters of s1 and s2 */
+/**
+ * @brief Compares the first 'n' bytes of the null-terminated
+ * strings 's1' and 's2'.
+ * 
+ * @param s1 The first null-terminated string.
+ * @param s2 The second null-terminated string. 
+ * @param n The number of bytes to compare. 
+ * @return 0 if the first 'n' bytes of 's1' and 's2' are equal, otherwise returns
+ * the difference between the first two different bytes.
+ */
 int			ft_strncmp(const char *s1, const char *s2, size_t n);
 
-/* Searches for the first occurrence of the
- substring needle in the string haystack */
+/**
+ * @brief Searches the first occurrence of the null-terminated string 'needle'
+ * in the null-terminated string 'haystack', at most 'len' bytes are searched.
+ * 
+ * @param haystack The null-terminated string to search.
+ * @param needle The null-terminated string to search for. 
+ * @param len The maximum number of bytes to search. 
+ * @return Pointer to the first occurrence of the string 'needle' in the
+ * string 'haystack', or NULL if not found.
+ */
 char		*ft_strnstr(const char *haystack, const char *needle, size_t len);
 
-/* Converts string to int */
-int			ft_atoi(const char *nptr);
+/**
+ * @brief Create a new string allocated with malloc, formed from the original
+ * string 's' with an offset of 'start' and a length of 'len'.
+ * 
+ * @param s The original string. 
+ * @param start The offset of the new string. 
+ * @param len The length of the new string. 
+ * @return Pointer to the new string or NULL if the allocation fails.
+ */
+char		ft_substr(char const *s, unsigned int start, size_t len);
 
-/* Converts int to string*/
-char		*ft_itoa(int n);
-
-/* Reserve memory using malloc and creates a substring
- where s pointing to start is copied up to len*/
-char		*ft_substr(char const *s, unsigned int start, size_t len);
-
-/* Reserve enoough memory using malloc and return a string
- formed by the concatenation of s1 and s2. */
+/**
+ * @brief Concatenates the null-terminated strings 's1' and 's2' into a
+ * new string allocated with malloc. 
+ * 
+ * @param s1 The first null-terminated string. 
+ * @param s2 The second null-terminated string. 
+ * @return Pointer to the new string or NULL if the allocation fails.
+ */
 char		*ft_strjoin(char const *s1, char const *s2);
 
-/* Reserve enough memory using malloc for a string that 
- is the result of deleting the set characters in the start and end of s1 */
+/**
+ * @brief Create a new string allocated with malloc, formed deleting the
+ * characters in the string 'set' from the beginning and end of the string 's1'. 
+ * 
+ * @param s1 The null-terminated string to trim. 
+ * @param set The null-terminated string containing the characters to trim.
+ * @return Pointer to the new string or NULL if the allocation fails. 
+ */
 char		*ft_strtrim(char const *s1, char const *set);
 
-/* Reserve enough memory using malloc for a copy of the string s,
- does the copy, and returns a pointer to it */
+/**
+ * @brief Allocates memory with malloc for a copy of the null-terminated 
+ * string 's'. 
+ * 
+ * @param s The null-terminated string to copy.
+ * @return Pointer to the new string or NULL if the allocation fails. 
+ */
 char		*ft_strdup(const char *s);
 
-/* Reserve enough memory using malloc and return a strings array
- splited using the character c as a delimiter */
+/**
+ * @brief Allocates memory to a string with malloc for splitting the 
+ * null-terminated string 's' using the character 'c' as a delimiter. 
+ * 
+ * @param s The null-terminated string to split.
+ * @param c The delimiter character. 
+ * @return The array of strings obtained from the split or NULL if the
+ * allocation fails. 
+ */
 char		**ft_split(char const *s, char c);
 
-/* Apply the function f to each character of the string passed as argument
- to create a new string resulting from successive applications of f with the given
- s character index and the respective character*/
+/**
+ * @brief Applies a function `f` to each character of the input string `s`
+ * to create a new string.
+ * 
+ * @param s The input string.
+ * @param f The function to apply to each character.
+ * @return The resulting string from the successive applications of `f`.
+ */
 char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
-/* Apply the function f to each character of the string passed as argument with the given
- character index and character address*/
-void		*ft_striteri(char *s, void (*f)(unsigned int, char *));
+/**
+ * @brief Applies a function `f` to each character of the input string `s`.
+ * 
+ * @param s The input string.
+ * @param f The function to apply to each character.
+ */
+void		ft_striteri(char *s, void (*f)(unsigned int, char *));
 
-/******************************************
-	Functions that convert letters
-******************************************/
+/**********************************************
+ * Data conversion functions.
+ **********************************************/
 
-/* Converts lowercase letter to uppercase */
+/**
+ * @brief Converts a lowercase letter to uppercase.
+ * 
+ * @param c The input character.
+ * @return The resulting uppercase letter.
+ */
 int			ft_toupper(int c);
 
-/* Converts uppercase letter to lowercase */
+/**
+ * @brief Converts an uppercase letter to lowercase.
+ * 
+ * @param c The input character.
+ * @return The resulting lowercase letter.
+ */
 int			ft_tolower(int c);
 
-/******************************************
-	Functions that handle files
-******************************************/
+/**
+ * @brief Converts 'nptr' string to an integer.
+ * 
+ * @param nptr The string to convert.
+ * @return The converted integer.
+ */
+int			ft_atoi(const char *nptr);
 
-/* Sends the character c to the given file descriptor */
+/**
+ * @brief Converts the integer 'n' to a null-terminated string. 
+ * 
+ * @param n The integer to convert. 
+ * @return The converted string. 
+ */
+char		*ft_itoa(int n);
+
+/**********************************************
+ * File descriptor functions.
+ **********************************************/
+
+/**
+ * @brief Sends a character `c` to a file descriptor `fd`.
+ * 
+ * @param c The character to send.
+ * @param fd The file descriptor.
+ */
 void		ft_putchar_fd(char c, int fd);
 
-/* Sends the string s to the given file descriptor */
+/**
+ * @brief Sends a string `s` to a file descriptor `fd`.
+ * 
+ * @param s The string to send.
+ * @param fd The file descriptor.
+ */
 void		ft_putstr_fd(char *s, int fd);
 
-/* Sends the string s to the given file descriptor,
- followed by a newline */
+/**
+ * @brief Sends a string `s` followed by a newline to a file descriptor `fd`.
+ * 
+ * @param s The string to send.
+ * @param fd The file descriptor.
+ */
 void		ft_putendl_fd(char *s, int fd);
 
-/* Sends the integer n to the given file descriptor */
+/**
+ * @brief Sends an integer `n` to a file descriptor `fd`.
+ * 
+ * @param n The integer to send.
+ * @param fd The file descriptor.
+ */
 void		ft_putnbr_fd(int n, int fd);
 
 #endif

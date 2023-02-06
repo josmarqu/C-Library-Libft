@@ -6,11 +6,11 @@
 /*   By: josmarqu <josmarqu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 09:26:39 by josmarqu          #+#    #+#             */
-/*   Updated: 2023/02/01 09:26:45 by josmarqu         ###   ########.fr       */
+/*   Updated: 2023/02/06 18:50:35 by josmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(const char *s);
+#include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {

@@ -6,15 +6,12 @@
 /*   By: josmarqu <josmarqu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 09:24:43 by josmarqu          #+#    #+#             */
-/*   Updated: 2023/02/06 11:17:49 by josmarqu         ###   ########.fr       */
+/*   Updated: 2023/02/06 18:48:18 by josmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-
-int	ft_strlen(const char *s);
-
-int	ft_strlcpy(char *dest, const char *src, int destsize);
+#include "libft.h"
 
 char	*ft_strdup(const char *s)
 {

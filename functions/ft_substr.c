@@ -6,15 +6,12 @@
 /*   By: josmarqu <josmarqu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 09:27:39 by josmarqu          #+#    #+#             */
-/*   Updated: 2023/02/06 11:18:29 by josmarqu         ###   ########.fr       */
+/*   Updated: 2023/02/06 18:51:13 by josmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-
-int	ft_strlen(const char *s);
-
-int	ft_strlcpy(char *dest, const char *src, int destsize);
+#include "libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {

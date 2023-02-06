@@ -3,14 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: josmarqu <josmarqu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: josmarqu <josmarqu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 09:23:52 by josmarqu          #+#    #+#             */
-/*   Updated: 2023/02/05 18:35:26 by josmarqu         ###   ########.fr       */
+/*   Updated: 2023/02/06 18:39:31 by josmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memset(void *b, int c, size_t len)
+#include "libft.h"
+
+void	*ft_memset(void *s, int c, size_t n)
 {
 	unsigned char	*b_copy;
 

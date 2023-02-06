@@ -6,23 +6,14 @@
 /*   By: josmarqu <josmarqu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 15:23:15 by josmarqu          #+#    #+#             */
-/*   Updated: 2023/02/06 11:21:18 by josmarqu         ###   ########.fr       */
+/*   Updated: 2023/02/06 18:47:56 by josmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "libft.h"
 
-int		ft_strlen(const char *s);
-
-int		ft_strlcpy(char *dest, const char *src, int destsize);
-
-char	*ft_substr(char const *s, unsigned int start, size_t len);
-
-int		split_count(char const *s, char c);
-
-char	*ft_strtrim(char const *s1, char const *set);
-
-char	**init_split(char const *s, char c)
+static char	**init_split(char const *s, char c)
 {
 	char	**split;
 

@@ -6,13 +6,13 @@
 /*   By: josmarqu <josmarqu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 09:20:01 by josmarqu          #+#    #+#             */
-/*   Updated: 2023/02/01 09:20:14 by josmarqu         ###   ########.fr       */
+/*   Updated: 2023/02/06 18:44:35 by josmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int c);
+#include "libft.h"
 
-int	ft_isspace(int c)
+static int	ft_isspace(int c)
 {
 	if (c == ' ' || c == '\t' || c == '\n'
 		|| c == '\v' || c == '\f' || c == '\r')

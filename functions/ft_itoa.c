@@ -6,13 +6,13 @@
 /*   By: josmarqu <josmarqu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 19:33:42 by josmarqu          #+#    #+#             */
-/*   Updated: 2023/02/06 11:22:38 by josmarqu         ###   ########.fr       */
+/*   Updated: 2023/02/06 18:45:47 by josmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int	ft_intlen(int n)
+static int	ft_intlen(int n)
 {
 	int	len;
 
