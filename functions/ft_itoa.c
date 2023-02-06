@@ -6,7 +6,7 @@
 /*   By: josmarqu <josmarqu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 19:33:42 by josmarqu          #+#    #+#             */
-/*   Updated: 2023/02/03 21:29:44 by josmarqu         ###   ########.fr       */
+/*   Updated: 2023/02/06 09:23:30 by josmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ char	*ft_itoa(int n)
 	}
 	if (r_string == 0)
 		return (0);
+	r_string[n_len] = '\0';
 	while (n_len > i)
 	{
 		n_len--;
