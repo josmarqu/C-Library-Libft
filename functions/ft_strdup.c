@@ -6,7 +6,7 @@
 /*   By: josmarqu <josmarqu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 09:24:43 by josmarqu          #+#    #+#             */
-/*   Updated: 2023/02/01 09:24:47 by josmarqu         ###   ########.fr       */
+/*   Updated: 2023/02/06 11:17:49 by josmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ char	*ft_strdup(const char *s)
 
 	s_len = ft_strlen(s);
 	s_copy = malloc(s_len * sizeof(char));
+	if (s_copy == NULL)
+		return (NULL);
 	ft_strlcpy(s_copy, s, s_len + 1);
 	return (s_copy);
 }

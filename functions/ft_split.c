@@ -6,7 +6,7 @@
 /*   By: josmarqu <josmarqu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 15:23:15 by josmarqu          #+#    #+#             */
-/*   Updated: 2023/02/03 19:23:18 by josmarqu         ###   ########.fr       */
+/*   Updated: 2023/02/06 11:21:18 by josmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	**init_split(char const *s, char c)
 	char	**split;
 
 	split = (char **)malloc(sizeof(char *) * split_count(s, c) + 1);
-	if (!split)
+	if (split == NULL)
 		return (NULL);
 	return (split);
 }
@@ -39,8 +39,8 @@ char	**ft_split(char const *s, char c)
 	unsigned int	i;
 	unsigned int	j;
 
-	if (*s == 0)
-		return (0);
+	if (*s == NULL)
+		return (NULL);
 	s = ft_strtrim(s, &c);
 	split = init_split(s, c);
 	s_start = 0;

@@ -6,7 +6,7 @@
 /*   By: josmarqu <josmarqu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 19:33:42 by josmarqu          #+#    #+#             */
-/*   Updated: 2023/02/06 09:23:30 by josmarqu         ###   ########.fr       */
+/*   Updated: 2023/02/06 11:22:38 by josmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,16 +40,16 @@ char	*ft_itoa(int n)
 		return (0);
 	n_len = ft_intlen(n);
 	r_string = (char *)malloc(sizeof(char) * (n_len + 1));
+	if (r_string == NULL)
+		return (NULL);
 	i = 0;
+	r_string[n_len] = '\0';
 	if (n < 0)
 	{
 		n = -n;
 		r_string[0] = '-';
 		i = 1;
 	}
-	if (r_string == 0)
-		return (0);
-	r_string[n_len] = '\0';
 	while (n_len > i)
 	{
 		n_len--;
