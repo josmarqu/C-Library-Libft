@@ -6,7 +6,7 @@
 /*   By: josmarqu <josmarqu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 15:00:22 by josmarqu          #+#    #+#             */
-/*   Updated: 2023/02/06 18:32:16 by josmarqu         ###   ########.fr       */
+/*   Updated: 2023/02/13 11:54:12 by josmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -225,7 +225,7 @@ char		*ft_strnstr(const char *haystack, const char *needle, size_t len);
  * @param len The length of the new string. 
  * @return Pointer to the new string or NULL if the allocation fails.
  */
-char		ft_substr(char const *s, unsigned int start, size_t len);
+char		*ft_substr(char const *s, unsigned int start, size_t len);
 
 /**
  * @brief Concatenates the null-terminated strings 's1' and 's2' into a

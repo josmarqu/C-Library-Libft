@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: josmarqu <josmarqu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: josmarqu <josmarqu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 15:23:15 by josmarqu          #+#    #+#             */
-/*   Updated: 2023/02/09 16:10:41 by josmarqu         ###   ########.fr       */
+/*   Updated: 2023/02/13 12:39:14 by josmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ static int	split_count(char const *s, char c)
 			count++;
 		i++;
 	}
-	printf("count: %d\n", count);
 	return (count);
 }
 
@@ -38,6 +37,19 @@ static char	**init_split(int count)
 	if (split == NULL)
 		return (NULL);
 	return (split);
+}
+
+static void	free_split(char **split)
+{
+	unsigned int	i;
+
+	i = 0;
+	while (split[i])
+	{
+		free(split[i]);
+		i++;
+	}
+	free(split);
 }
 
 static char	**split_gen(char **split, char const *s, char c)
@@ -55,15 +67,17 @@ static char	**split_gen(char **split, char const *s, char c)
 		{
 			split[j] = (char *)malloc(sizeof(char) * (i - s_start + 1));
 			if (split[j] == NULL)
+			{
+				free_split(split);
 				return (NULL);
-			split[j] = ft_substr(s, s_start, i - s_start);
+			}			
+			ft_strlcpy(split[j], s + s_start, i - s_start);
 			s_start = i + 1;
 			j++;
 		}
 		i++;
 	}
 	split[j] = NULL;
-	free(split);	
 	return (split);
 }
 
