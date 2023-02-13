@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_test.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: josmarqu <josmarqu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/01 09:23:52 by josmarqu          #+#    #+#             */
-/*   Updated: 2023/02/13 15:59:42 by josmarqu         ###   ########.fr       */
+/*   Created: 2023/02/13 16:21:49 by josmarqu          #+#    #+#             */
+/*   Updated: 2023/02/13 16:23:17 by josmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-void	*ft_memset(void *s, int c, size_t n)
+//test ft_strlen
+int main()
 {
-	unsigned char	*s_copy;
-
-	s_copy = s;
-	while (n--)
-		*s_copy++ = (char) c;
-	return (s);
+	char *str = "hola";
+	printf("%d\n", ft_strlen(str));
+	return (0);
 }

@@ -6,13 +6,13 @@
 /*   By: josmarqu <josmarqu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 09:20:20 by josmarqu          #+#    #+#             */
-/*   Updated: 2023/02/06 18:41:12 by josmarqu         ###   ########.fr       */
+/*   Updated: 2023/02/13 15:50:44 by josmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+void	*ft_bzero(void *s, size_t n)
 {
 	return (ft_memset(s, 0, n));
 }

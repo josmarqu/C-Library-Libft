@@ -6,7 +6,7 @@
 /*   By: josmarqu <josmarqu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 09:26:39 by josmarqu          #+#    #+#             */
-/*   Updated: 2023/02/06 18:50:35 by josmarqu         ###   ########.fr       */
+/*   Updated: 2023/02/13 16:07:42 by josmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ char	*ft_strrchr(const char *s, int c)
 
 	s_copy = (char *) s;
 	s_copy += ft_strlen(s) - 1;
-	while (*scopy)
+	while (*s_copy)
 	{
-		if (*scopy == c)
-			return (scopy);
-		scopy--;
+		if (*s_copy == c)
+			return (s_copy);
+		s_copy--;
 	}
 	return (0);
 }

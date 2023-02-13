@@ -6,7 +6,7 @@
 /*   By: josmarqu <josmarqu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 15:00:22 by josmarqu          #+#    #+#             */
-/*   Updated: 2023/02/13 11:54:12 by josmarqu         ###   ########.fr       */
+/*   Updated: 2023/02/13 15:50:54 by josmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ void		*ft_memcpy(void *dest, const void *src, size_t n);
  * @param s The memory area to fill.
  * @param n The number of bytes to fill.
  */
-void		ft_bzero(void *s, size_t n);
+void		*ft_bzero(void *s, size_t n);
 
 /**
  * @brief  Copies using a tempory array 'n' bytes from memory area 'src'
