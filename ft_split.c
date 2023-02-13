@@ -6,7 +6,7 @@
 /*   By: josmarqu <josmarqu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 15:23:15 by josmarqu          #+#    #+#             */
-/*   Updated: 2023/02/13 12:39:14 by josmarqu         ###   ########.fr       */
+/*   Updated: 2023/02/13 12:43:48 by josmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,14 +64,13 @@ static char	**split_gen(char **split, char const *s, char c)
 	while (s[i])
 	{
 		if ((s[i] == c && s[i + 1] != c) || (s[i] == 0))
-		{
-			split[j] = (char *)malloc(sizeof(char) * (i - s_start + 1));
+		{	
+			ft_strlcpy(split[j], s + s_start, i - s_start);
 			if (split[j] == NULL)
 			{
 				free_split(split);
 				return (NULL);
 			}			
-			ft_strlcpy(split[j], s + s_start, i - s_start);
 			s_start = i + 1;
 			j++;
 		}
