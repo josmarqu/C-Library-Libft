@@ -1,3 +1,4 @@
+*.json
 *.o
 *.a
 output_files
