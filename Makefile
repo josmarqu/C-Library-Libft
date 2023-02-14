@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: josmarqu <josmarqu@student.42madrid.com    +#+  +:+       +#+         #
+#    By: josmarqu <josmarqu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/09 15:38:05 by josmarqu          #+#    #+#              #
-#    Updated: 2023/02/13 16:22:20 by josmarqu         ###   ########.fr        #
+#    Updated: 2023/02/14 15:39:44 by josmarqu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,7 +45,7 @@ $(NAME): $(OBJS)
 	@$(CC) $(CFLAGS) -c $< -o $@
 	@echo "Object files created"
 # PHONY rules to avoid conflicts with files
-.PHONY: clean fclean re
+.PHONY: clean fclean re test
 
 # Clean the object files
 clean:
