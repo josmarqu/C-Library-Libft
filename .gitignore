@@ -3,3 +3,4 @@
 *.a
 output_files
 test
+ft_test.c
