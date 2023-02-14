@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoic.c                                         :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: josmarqu <josmarqu@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: josmarqu <josmarqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 09:20:01 by josmarqu          #+#    #+#             */
-/*   Updated: 2023/02/06 18:44:35 by josmarqu         ###   ########.fr       */
+/*   Updated: 2023/02/14 18:00:29 by josmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,24 +23,28 @@ static int	ft_isspace(int c)
 
 int	ft_atoi(const char *nptr)
 {
-	int		sign;
-	int		result;
+	unsigned int	i;
+	int				sign;
+	int				result;
+	unsigned char	*str;
 
+	i = 0;
 	sign = 1;
 	result = 0;
-	if (*nptr == '-')
+	str = (unsigned char *) nptr;
+	while (ft_isspace(str[i]))
+		i++;
+	if (str[i] == '-')
 	{
 		sign = -1;
-		nptr++;
+		i++;
 	}
-	else if (*nptr == '+')
-		nptr++;
-	while (ft_isspace(*nptr))
-		nptr++;
-	while (ft_isdigit(*nptr))
+	else if (str[i] == '+')
+		i++;
+	while (ft_isdigit(str[i]))
 	{
-		result = result * 10 + (*nptr - '0');
-		nptr++;
+		result = result * 10 + (str[i] - '0');
+		i++;
 	}
 	return (result * sign);
 }

@@ -3,14 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: josmarqu <josmarqu@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: josmarqu <josmarqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 09:28:14 by josmarqu          #+#    #+#             */
-/*   Updated: 2023/02/01 09:28:16 by josmarqu         ###   ########.fr       */
+/*   Updated: 2023/02/14 15:52:09 by josmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_toupper(int c)
 {
-	return (c - 32);
+	if (c >= 'a' && c <= 'z')
+		return (c - 32);
+	return (c);
 }
