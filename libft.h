@@ -12,7 +12,7 @@
 
 #ifndef LIBFT_H
 # define LIBFT_H
-# include <stddef.h>
+# include <stddef.h> 
 
 /**********************************************
  * Check functions

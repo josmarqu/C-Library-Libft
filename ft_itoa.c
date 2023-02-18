@@ -6,11 +6,12 @@
 /*   By: josmarqu <josmarqu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 19:33:42 by josmarqu          #+#    #+#             */
-/*   Updated: 2023/02/17 09:33:25 by josmarqu         ###   ########.fr       */
+/*   Updated: 2023/02/18 17:27:22 by josmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "libft.h"
 
 static int	ft_intlen(int n)
 {
@@ -38,6 +39,8 @@ char	*ft_itoa(int n)
 	unsigned int	n_len;
 	unsigned int	i;
 
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
 	n_len = ft_intlen(n);
 	r_string = (char *)malloc(sizeof(char) * (n_len + 1));
 	if (r_string == NULL)

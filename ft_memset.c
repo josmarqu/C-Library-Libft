@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: josmarqu <josmarqu@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: josmarqu <josmarqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 09:23:52 by josmarqu          #+#    #+#             */
-/*   Updated: 2023/02/17 10:03:44 by josmarqu         ###   ########.fr       */
+/*   Updated: 2023/02/18 15:48:04 by josmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ void	*ft_memset(void *s, int c, size_t n)
 	unsigned int	i;	
 	unsigned char	*s_copy;
 
+	i = 0;	
 	s_copy = s;
 	while (n--)
 	{
