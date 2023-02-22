@@ -6,7 +6,7 @@
 /*   By: josmarqu <josmarqu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 15:23:15 by josmarqu          #+#    #+#             */
-/*   Updated: 2023/02/13 12:43:48 by josmarqu         ###   ########.fr       */
+/*   Updated: 2023/02/22 20:14:01 by josmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static void	free_split(char **split)
 	unsigned int	i;
 
 	i = 0;
-	while (split[i])
+	while (split[i] != NULL)
 	{
 		free(split[i]);
 		i++;
@@ -54,27 +54,28 @@ static void	free_split(char **split)
 
 static char	**split_gen(char **split, char const *s, char c)
 {
-	unsigned int	s_start;
 	unsigned int	i;
 	unsigned int	j;
+	unsigned int	s_start;
 
 	s_start = 0;
 	i = 0;
 	j = 0;
-	while (s[i])
+	while (s[i] != '\0')
 	{
-		if ((s[i] == c && s[i + 1] != c) || (s[i] == 0))
-		{	
-			ft_strlcpy(split[j], s + s_start, i - s_start);
+		i++;
+		if ((s[i] == c && s[i - 1] != c) || (s[i] == '\0' && s[i] != c))
+		{
+			split[j] = ft_substr(s, s_start, i - s_start);
 			if (split[j] == NULL)
 			{
 				free_split(split);
 				return (NULL);
-			}			
-			s_start = i + 1;
+			}
 			j++;
 		}
-		i++;
+		else if (s[i] != c && s[i - 1] == c)
+			s_start = i;
 	}
 	split[j] = NULL;
 	return (split);
@@ -82,23 +83,23 @@ static char	**split_gen(char **split, char const *s, char c)
 
 char	**ft_split(char const *s, char c)
 {
-	char			**split;
 	unsigned int	count;
+	char			**split;
 
-	if (*s == 0)
-		return (NULL);
 	s = ft_strtrim(s, &c);
 	if (s == NULL)
 		return (NULL);
 	count = split_count(s, c);
+	if (count == 0 && s[0] == '\0')
+	{
+		split = (char **)malloc(sizeof(char *));
+		if (split == NULL)
+			return (NULL);
+		split[0] = NULL;
+		return (split);
+	}
 	split = init_split(count);
 	if (split == NULL)
 		return (NULL);
-	if (count == 0)
-	{
-		split[0] = (char *)s;
-		split[1] = NULL;
-		return (split);
-	}
 	return (split_gen(split, s, c));
 }

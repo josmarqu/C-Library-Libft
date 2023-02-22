@@ -6,11 +6,13 @@
 /*   By: josmarqu <josmarqu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 09:25:52 by josmarqu          #+#    #+#             */
-/*   Updated: 2023/02/01 09:25:55 by josmarqu         ###   ########.fr       */
+/*   Updated: 2023/02/22 17:18:19 by josmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(const char *s)
+#include "libft.h"
+
+size_t	ft_strlen(const char *s)
 {
 	unsigned int	i;
 

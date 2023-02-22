@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: josmarqu <josmarqu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: josmarqu <josmarqu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/01 09:26:06 by josmarqu          #+#    #+#             */
-/*   Updated: 2023/02/14 17:03:56 by josmarqu         ###   ########.fr       */
+/*   Created: 2023/02/22 20:22:57 by josmarqu          #+#    #+#             */
+/*   Updated: 2023/02/22 20:22:59 by josmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

@@ -6,7 +6,7 @@
 /*   By: josmarqu <josmarqu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 15:00:22 by josmarqu          #+#    #+#             */
-/*   Updated: 2023/02/13 15:50:54 by josmarqu         ###   ########.fr       */
+/*   Updated: 2023/02/22 19:52:57 by josmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,14 +74,14 @@ int			ft_isprint(int c);
 void		*ft_memset(void *s, int c, size_t n);
 
 /**
- * @brief Copies 'n' bytes of the memory area 'src' to memory area 'dest'.  
+ * @brief Copies 'n' bytes of the memory area 'src' to memory area 'dst'.  
  * 
- * @param dest The destination memory area.
+ * @param dst The dstination memory area.
  * @param src The source memory area.	 
  * @param n The number of bytes to fill. 
- * @return  Pointer to 'dest'.
+ * @return  Pointer to 'dst'.
  */
-void		*ft_memcpy(void *dest, const void *src, size_t n);
+void		*ft_memcpy(void *dst, const void *src, size_t n);
 
 /**
  * @brief Set 'n' bytes of the memory area pointed to by 's' to zero. 
@@ -93,14 +93,14 @@ void		*ft_bzero(void *s, size_t n);
 
 /**
  * @brief  Copies using a tempory array 'n' bytes from memory area 'src'
- * to memory area 'dest', memory areas may overlap.
+ * to memory area 'dst', memory areas may overlap.
  * 
- * @param dest The destination memory area.
+ * @param dst The dstination memory area.
  * @param src The source memory area.
  * @param n The number of bytes to copy. 
- * @return Pointer to 'dest'.
+ * @return Pointer to 'dst'.
  */
-void		*ft_memmove(void *dest, const void *src, size_t n);
+void		*ft_memmove(void *dst, const void *src, size_t n);
 
 /**
  * @brief Searches into memory area 's' for the first occurrence of the byte 'c'
@@ -146,29 +146,29 @@ void		*ft_calloc(size_t nmemb, size_t size);
  * @param s The null-terminated string to count. 
  * @return The number of characters in the string 's'.
  */
-int			ft_strlen(const char *s);
+size_t		ft_strlen(const char *s);
 
 /**
- * @brief Copies up to 'destsize' - 1 characters from the null-terminated
- * string 'src' to 'dest', null-terminating the result.
+ * @brief Copies up to 'dstsize' - 1 characters from the null-terminated
+ * string 'src' to 'dst', null-terminating the result.
  * 
- * @param dest The destination null-terminated string.
+ * @param dst The dstination null-terminated string.
  * @param src The source null-terminated string.
- * @param destsize The size of the null-terminated destination string.
+ * @param dstsize The size of the null-terminated dstination string.
  * @return The total length of the string it tried to create. 
  */
-int			ft_strlcpy(char *dest, const char *src, size_t destsize);
+size_t		ft_strlcpy(char *dst, const char *src, size_t dstsize);
 
 /**
- * @brief Appends the null-terminated string 'src' to 'dest',
+ * @brief Appends the null-terminated string 'src' to 'dst',
  * null-terminating the result.
  * 
- * @param dest The destination null-terminated string. 
+ * @param dst The dstination null-terminated string. 
  * @param src The source null-terminated string. 
- * @param destsize The size of the destination string. 
+ * @param dstsize The size of the dstination string. 
  * @return The total length of the string it tried to create. 
  */
-int			ft_strlcat(char *dest, const char *src, size_t destsize);
+size_t		ft_strlcat(char *dst, const char *src, size_t dstsize);
 
 /**
  * @brief Locate the first occurrence of the character 'c' in the
@@ -205,16 +205,16 @@ char		*ft_strrchr(const char *s, int c);
 int			ft_strncmp(const char *s1, const char *s2, size_t n);
 
 /**
- * @brief Searches the first occurrence of the null-terminated string 'needle'
- * in the null-terminated string 'haystack', at most 'len' bytes are searched.
+ * @brief Searches the first occurrence of the null-terminated string 'little'
+ * in the null-terminated string 'big', at most 'len' bytes are searched.
  * 
- * @param haystack The null-terminated string to search.
- * @param needle The null-terminated string to search for. 
+ * @param big The null-terminated string to search.
+ * @param little The null-terminated string to search for. 
  * @param len The maximum number of bytes to search. 
- * @return Pointer to the first occurrence of the string 'needle' in the
- * string 'haystack', or NULL if not found.
+ * @return Pointer to the first occurrence of the string 'little' in the
+ * string 'big', or NULL if not found.
  */
-char		*ft_strnstr(const char *haystack, const char *needle, size_t len);
+char		*ft_strnstr(const char *big, const char *little, size_t len);
 
 /**
  * @brief Create a new string allocated with malloc, formed from the original

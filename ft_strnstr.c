@@ -6,33 +6,37 @@
 /*   By: josmarqu <josmarqu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 09:26:26 by josmarqu          #+#    #+#             */
-/*   Updated: 2023/02/06 18:50:23 by josmarqu         ###   ########.fr       */
+/*   Updated: 2023/02/22 20:18:55 by josmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	unsigned int	ch_counter;
-	unsigned int	n_len;
-	char			*h;
-	char			*n;
+	size_t		i;
+	size_t		j;
+	size_t		l_len;
+	char		*b_cpy;
+	char		*l_cpy;
 
-	ch_counter = 0;
-	n_len = ft_strlen(needle);
-	h = (char *) haystack;
-	n = (char *) needle;
-	while (len-- && ch_counter != n_len)
+	i = 0;
+	j = 0;
+	l_len = ft_strlen(little);
+	b_cpy = (char *)big;
+	l_cpy = (char *)little;
+	if (l_len == 0)
+		return (b_cpy);
+	while (b_cpy[i] != '\0' && i < len)
 	{
-		if (*h == *n)
+		while (b_cpy[i + j] == l_cpy[j] && (i + j) < len)
 		{
-			ch_counter += 1;
-			n++;
+			if (j == l_len - 1)
+				return (&b_cpy[i]);
+			j++;
 		}
-			h++;
+		j = 0;
+		i++;
 	}
-	if (ch_counter == n_len)
-		return (h - ch_counter);
-	return (0);
+	return (NULL);
 }

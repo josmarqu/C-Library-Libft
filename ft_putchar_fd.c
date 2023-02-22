@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: josmarqu <josmarqu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: josmarqu <josmarqu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/05 17:50:20 by josmarqu          #+#    #+#             */
-/*   Updated: 2023/02/05 17:59:44 by josmarqu         ###   ########.fr       */
+/*   Created: 2023/02/22 20:22:01 by josmarqu          #+#    #+#             */
+/*   Updated: 2023/02/22 20:22:03 by josmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

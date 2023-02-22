@@ -6,7 +6,7 @@
 /*   By: josmarqu <josmarqu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 09:20:35 by josmarqu          #+#    #+#             */
-/*   Updated: 2023/02/13 15:52:31 by josmarqu         ###   ########.fr       */
+/*   Updated: 2023/02/22 19:49:49 by josmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	unsigned char	*p;
+	unsigned char	*mem;
 
-	p = malloc(nmemb * size);
-	if (p == NULL)
+	mem = malloc(nmemb * size);
+	if (mem == NULL)
 		return (NULL);
-	ft_bzero(p, nmemb * size);
-	return (p);
+	ft_bzero(mem, nmemb * size);
+	return (mem);
 }

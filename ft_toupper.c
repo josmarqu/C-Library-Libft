@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: josmarqu <josmarqu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: josmarqu <josmarqu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/01 09:28:14 by josmarqu          #+#    #+#             */
-/*   Updated: 2023/02/14 15:52:09 by josmarqu         ###   ########.fr       */
+/*   Created: 2023/02/22 20:23:38 by josmarqu          #+#    #+#             */
+/*   Updated: 2023/02/22 20:23:40 by josmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

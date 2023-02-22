@@ -6,7 +6,7 @@
 /*   By: josmarqu <josmarqu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 19:33:42 by josmarqu          #+#    #+#             */
-/*   Updated: 2023/02/18 17:27:22 by josmarqu         ###   ########.fr       */
+/*   Updated: 2023/02/22 20:11:20 by josmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,29 +35,29 @@ static int	ft_intlen(int n)
 
 char	*ft_itoa(int n)
 {
-	char			*r_string;
-	unsigned int	n_len;
 	unsigned int	i;
+	unsigned int	n_len;
+	char			*r_str;
 
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
 	n_len = ft_intlen(n);
-	r_string = (char *)malloc(sizeof(char) * (n_len + 1));
-	if (r_string == NULL)
+	r_str = (char *)malloc(sizeof(char) * (n_len + 1));
+	if (r_str == NULL)
 		return (NULL);
 	i = 0;
-	r_string[n_len] = '\0';
+	r_str[n_len] = '\0';
 	if (n < 0)
 	{
 		n = -n;
-		r_string[0] = '-';
+		r_str[0] = '-';
 		i = 1;
 	}
 	while (n_len > i)
 	{
 		n_len--;
-		r_string[n_len] = '0' + (n % 10);
+		r_str[n_len] = '0' + (n % 10);
 		n = n / 10;
 	}
-	return (r_string);
+	return (r_str);
 }

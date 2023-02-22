@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: josmarqu <josmarqu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: josmarqu <josmarqu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/01 09:27:55 by josmarqu          #+#    #+#             */
-/*   Updated: 2023/02/14 15:52:18 by josmarqu         ###   ########.fr       */
+/*   Created: 2023/02/22 20:23:29 by josmarqu          #+#    #+#             */
+/*   Updated: 2023/02/22 20:23:32 by josmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
