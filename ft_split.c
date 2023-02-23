@@ -6,7 +6,7 @@
 /*   By: josmarqu <josmarqu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 15:23:15 by josmarqu          #+#    #+#             */
-/*   Updated: 2023/02/22 20:14:01 by josmarqu         ###   ########.fr       */
+/*   Updated: 2023/02/23 18:35:10 by josmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,16 +27,6 @@ static int	split_count(char const *s, char c)
 		i++;
 	}
 	return (count);
-}
-
-static char	**init_split(int count)
-{
-	char			**split;
-
-	split = (char **)malloc(sizeof(char *) * (count + 2));
-	if (split == NULL)
-		return (NULL);
-	return (split);
 }
 
 static void	free_split(char **split)
@@ -69,6 +59,7 @@ static char	**split_gen(char **split, char const *s, char c)
 			split[j] = ft_substr(s, s_start, i - s_start);
 			if (split[j] == NULL)
 			{
+				free((char *)s);
 				free_split(split);
 				return (NULL);
 			}
@@ -78,15 +69,23 @@ static char	**split_gen(char **split, char const *s, char c)
 			s_start = i;
 	}
 	split[j] = NULL;
+	free((char *)s);
 	return (split);
 }
 
 char	**ft_split(char const *s, char c)
 {
 	unsigned int	count;
+	char			*str_char;
 	char			**split;
 
-	s = ft_strtrim(s, &c);
+	str_char = (char *)malloc(sizeof(char) * 2);
+	if (str_char == NULL)
+		return (NULL);
+	str_char[0] = c;
+	str_char[1] = '\0';	
+	s = ft_strtrim(s, str_char);
+	free(str_char);
 	if (s == NULL)
 		return (NULL);
 	count = split_count(s, c);
@@ -94,12 +93,19 @@ char	**ft_split(char const *s, char c)
 	{
 		split = (char **)malloc(sizeof(char *));
 		if (split == NULL)
+		{
+			free((char *)s);
 			return (NULL);
+		}	
 		split[0] = NULL;
+		free((char *)s);
 		return (split);
-	}
-	split = init_split(count);
+	}	
+	split = (char **)malloc(sizeof(char *) * (count + 2));
 	if (split == NULL)
+	{
+		free((char *)s);
 		return (NULL);
+	}	
 	return (split_gen(split, s, c));
 }
