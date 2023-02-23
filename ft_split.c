@@ -6,7 +6,7 @@
 /*   By: josmarqu <josmarqu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 15:23:15 by josmarqu          #+#    #+#             */
-/*   Updated: 2023/02/23 18:35:10 by josmarqu         ###   ########.fr       */
+/*   Updated: 2023/02/23 18:54:19 by josmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,15 @@ static void	free_split(char **split)
 	free(split);
 }
 
+static char	**free_return(char *s_free, char **as_free, char **s_retu)
+{
+	if (s_free != NULL)
+		free(s_free);
+	if (as_free != NULL)
+		free_split(as_free);
+	return (s_retu);
+}
+
 static char	**split_gen(char **split, char const *s, char c)
 {
 	unsigned int	i;
@@ -58,19 +67,14 @@ static char	**split_gen(char **split, char const *s, char c)
 		{
 			split[j] = ft_substr(s, s_start, i - s_start);
 			if (split[j] == NULL)
-			{
-				free((char *)s);
-				free_split(split);
-				return (NULL);
-			}
+				return (free_return((char *)s, split, NULL));
 			j++;
 		}
 		else if (s[i] != c && s[i - 1] == c)
 			s_start = i;
 	}
 	split[j] = NULL;
-	free((char *)s);
-	return (split);
+	return (free_return((char *)s, NULL, split));
 }
 
 char	**ft_split(char const *s, char c)
@@ -83,7 +87,7 @@ char	**ft_split(char const *s, char c)
 	if (str_char == NULL)
 		return (NULL);
 	str_char[0] = c;
-	str_char[1] = '\0';	
+	str_char[1] = '\0';
 	s = ft_strtrim(s, str_char);
 	free(str_char);
 	if (s == NULL)
@@ -93,19 +97,12 @@ char	**ft_split(char const *s, char c)
 	{
 		split = (char **)malloc(sizeof(char *));
 		if (split == NULL)
-		{
-			free((char *)s);
-			return (NULL);
-		}	
+			return (free_return((char *)s, NULL, NULL));
 		split[0] = NULL;
-		free((char *)s);
-		return (split);
+		return (free_return((char *)s, NULL, split));
 	}	
 	split = (char **)malloc(sizeof(char *) * (count + 2));
 	if (split == NULL)
-	{
-		free((char *)s);
-		return (NULL);
-	}	
+		return (free_return((char *)s, NULL, NULL));
 	return (split_gen(split, s, c));
 }
