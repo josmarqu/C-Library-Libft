@@ -6,7 +6,7 @@
 /*   By: josmarqu <josmarqu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 15:23:15 by josmarqu          #+#    #+#             */
-/*   Updated: 2023/02/23 18:54:19 by josmarqu         ###   ########.fr       */
+/*   Updated: 2023/02/24 08:51:05 by josmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,11 +83,9 @@ char	**ft_split(char const *s, char c)
 	char			*str_char;
 	char			**split;
 
-	str_char = (char *)malloc(sizeof(char) * 2);
+	str_char = ft_substr(&c, 0, 1);
 	if (str_char == NULL)
 		return (NULL);
-	str_char[0] = c;
-	str_char[1] = '\0';
 	s = ft_strtrim(s, str_char);
 	free(str_char);
 	if (s == NULL)
