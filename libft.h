@@ -6,7 +6,7 @@
 /*   By: josmarqu <josmarqu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 15:00:22 by josmarqu          #+#    #+#             */
-/*   Updated: 2023/02/22 19:52:57 by josmarqu         ###   ########.fr       */
+/*   Updated: 2023/03/01 19:29:21 by josmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -357,4 +357,35 @@ void		ft_putendl_fd(char *s, int fd);
  */
 void		ft_putnbr_fd(int n, int fd);
 
+/**********************************************
+ * Node list structure.
+ **********************************************/
+
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}				t_list;
+
+/**********************************************
+ * Linked list functions.
+ **********************************************/
+
+/**
+ * @brief Create a new node allocated with malloc, the content is
+ * initialized with the value of the parameter 'content' and the
+ * 'next' pointer is initialized to NULL.
+ * 
+ * @param content 
+ * @return t_list* 
+ */
+t_list		*ft_lstnew(void *content);
+
+/**
+ * @brief  Adds the element 'new' at the beginning of the list.
+ * 
+ * @param lst 
+ * @param new 
+ */
+void		ft_lstadd_front(t_list **lst, t_list *new);
 #endif
