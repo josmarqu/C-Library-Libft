@@ -1,6 +1,9 @@
 *.json
 *.o
 *.a
+.vscode
 output_files
 test
+test_bonus
 ft_test.c
+ft_test_bonus.c
