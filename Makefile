@@ -6,7 +6,7 @@
 #    By: josmarqu <josmarqu@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/09 15:38:05 by josmarqu          #+#    #+#              #
-#    Updated: 2023/02/20 12:03:35 by josmarqu         ###   ########.fr        #
+#    Updated: 2023/03/01 21:09:32 by josmarqu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,8 +20,14 @@ ft_putchar_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_putstr_fd.c ft_split.c ft_strc
 ft_strjoin.c ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strmapi.c ft_strncmp.c ft_strnstr.c ft_strrchr.c \
 ft_striteri.c ft_strtrim.c ft_substr.c ft_tolower.c ft_toupper.c
 
+# Bonus source files
+BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c
+
 # Object files
 OBJS = $(SRCS:.c=.o)
+
+# Bonus object files
+BONUS_OBJS = $(BONUS:.c=.o)
 
 # Compiler
 CC = gcc
@@ -44,8 +50,14 @@ $(NAME): $(OBJS)
 %.o: %.c
 	@$(CC) $(CFLAGS) -c $< -o $@
 	@echo "Object files created"
+
+# Rule for adding the bonus files to the library
+bonus: $(BONUS_OBJS)
+	@ar rc $(NAME) $(BONUS_OBJS)
+	@echo "Bonus added"
+
 # PHONY rules to avoid conflicts with files
-.PHONY: clean fclean re test
+.PHONY: clean fclean re test test_bonus
 
 # Clean the object files
 clean:
@@ -65,4 +77,10 @@ re: fclean all
 test: $(NAME)
 	@$(CC) $(CFLAGS) ft_test.c -L. -lft -o test
 	@./test
+	@echo "Test done"
+
+# Rule for testing the library with the bonus files
+test_bonus: bonus
+	@$(CC) $(CFLAGS) ft_test_bonus.c -L. -lft -o test_bonus
+	@./test_bonus
 	@echo "Test done"
