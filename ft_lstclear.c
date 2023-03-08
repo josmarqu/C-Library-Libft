@@ -6,7 +6,7 @@
 /*   By: josmarqu <josmarqu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 13:08:57 by josmarqu          #+#    #+#             */
-/*   Updated: 2023/03/08 13:14:52 by josmarqu         ###   ########.fr       */
+/*   Updated: 2023/03/08 17:17:28 by josmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	if (lst == NULL)
 		return ;
-	while (lst->next != NULL)
+	while (*lst != NULL)
 	{
-		ft_lstdelone(lst, del);
-		lst = lst->next;
+		ft_lstdelone(*lst, del);
+		*lst = (*lst)->next;
 	}
 	*lst = NULL;
 }
