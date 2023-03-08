@@ -6,7 +6,7 @@
 /*   By: josmarqu <josmarqu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 15:00:22 by josmarqu          #+#    #+#             */
-/*   Updated: 2023/03/08 13:53:50 by josmarqu         ###   ########.fr       */
+/*   Updated: 2023/03/08 14:06:15 by josmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -438,4 +438,17 @@ void		ft_lstclear(t_list **lst, void (*del)(void*));
  * @param f A pointer to the function used in each content of each node.
  */
 void		ft_lstiter(t_list *lst, void (*f)(void *));
+
+/**
+ * @brief Iterates the list 'lst' and applies the function 'f' to the content
+ * of each node to create a new list resulting of the successive applications
+ * of 'f'. The 'del' function is used to delete the content of a node if
+ * necessary.
+ * 
+ * @param lst 
+ * @param f 
+ * @param del 
+ * @return t_list* 
+ */
+t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 #endif
