@@ -6,7 +6,7 @@
 #    By: josmarqu <josmarqu@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/09 15:38:05 by josmarqu          #+#    #+#              #
-#    Updated: 2023/03/08 13:02:27 by josmarqu         ###   ########.fr        #
+#    Updated: 2023/03/08 13:56:29 by josmarqu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ ft_striteri.c ft_strtrim.c ft_substr.c ft_tolower.c ft_toupper.c
 
 # Bonus source files
 BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c \
+ft_lstclear.c ft_lstiter.c ft_lstmap.c
 
 
 # Object files
