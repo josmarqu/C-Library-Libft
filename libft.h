@@ -6,7 +6,7 @@
 /*   By: josmarqu <josmarqu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 15:00:22 by josmarqu          #+#    #+#             */
-/*   Updated: 2023/03/08 12:43:26 by josmarqu         ###   ########.fr       */
+/*   Updated: 2023/03/08 13:17:06 by josmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -414,4 +414,24 @@ t_list		*ft_lstlast(t_list *lst);
  * the end of the list. 
  */
 void		ft_lstadd_back(t_list **lst, t_list *new);
+
+/**
+ * @brief Frees the memory of the content of the node 'lst'
+ * with the function 'del' given as a parameter and free the node.
+ * 
+ * @param lst The node to free.
+ * @param del The address of the function used to delete the
+ * content of the node.
+ */
+void		ft_lstdelone(t_list *lst, void (*del)(void*));
+
+/**
+ * @brief Deletes and frees the given element and every successor
+ * of that element, using the function 'del' and free.
+ * 
+ * @param lst The address of a pointer to an element.
+ * @param del The address of the function used to delete the 
+ * content of the element. 
+ */
+void		ft_lstclear(t_list **lst, void (*del)(void*));
 #endif
