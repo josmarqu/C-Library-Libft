@@ -6,7 +6,7 @@
 /*   By: josmarqu <josmarqu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 13:54:02 by josmarqu          #+#    #+#             */
-/*   Updated: 2023/03/08 14:05:34 by josmarqu         ###   ########.fr       */
+/*   Updated: 2023/03/08 17:30:38 by josmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,9 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	if (lst == NULL)
 		return ;
-	while (lst->next != NULL)
+	while (lst != NULL)
 	{
 		f(lst->content);
+		lst = lst->next;
 	}
 }
