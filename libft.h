@@ -6,7 +6,7 @@
 /*   By: josmarqu <josmarqu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 15:00:22 by josmarqu          #+#    #+#             */
-/*   Updated: 2023/03/08 14:06:15 by josmarqu         ###   ########.fr       */
+/*   Updated: 2023/03/08 19:36:37 by josmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,6 +134,14 @@ int			ft_memcmp(const void *s1, const void *s2, size_t n);
  * @return Pointer to the allocated memory. 
  */
 void		*ft_calloc(size_t nmemb, size_t size);
+
+/**
+ * @brief Free the memory allocated for the array of strings 'array' and
+ * all the strings in it.
+ * 
+ * @param array The array of strings to free. 
+ */
+void		ft_free_str_arr(char **array);
 
 /**********************************************
  * String functions

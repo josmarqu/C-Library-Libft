@@ -6,7 +6,7 @@
 /*   By: josmarqu <josmarqu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 15:23:15 by josmarqu          #+#    #+#             */
-/*   Updated: 2023/02/24 08:51:05 by josmarqu         ###   ########.fr       */
+/*   Updated: 2023/03/08 19:41:09 by josmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,25 +29,12 @@ static int	split_count(char const *s, char c)
 	return (count);
 }
 
-static void	free_split(char **split)
-{
-	unsigned int	i;
-
-	i = 0;
-	while (split[i] != NULL)
-	{
-		free(split[i]);
-		i++;
-	}
-	free(split);
-}
-
 static char	**free_return(char *s_free, char **as_free, char **s_retu)
 {
 	if (s_free != NULL)
 		free(s_free);
 	if (as_free != NULL)
-		free_split(as_free);
+		ft_free_str_arr(as_free);
 	return (s_retu);
 }
 
@@ -77,17 +64,28 @@ static char	**split_gen(char **split, char const *s, char c)
 	return (free_return((char *)s, NULL, split));
 }
 
+static char	*init_strtrim(char const *s, char c)
+{
+	char	*str_char;
+
+	str_char = malloc(sizeof(char) * 2);
+	if (str_char == NULL)
+		return (NULL);
+	str_char[0] = c;
+	str_char[1] = '\0';
+	s = ft_strtrim(s, str_char);
+	free(str_char);
+	if (s == NULL)
+		return (NULL);
+	return ((char *)s);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	unsigned int	count;
-	char			*str_char;
 	char			**split;
 
-	str_char = ft_substr(&c, 0, 1);
-	if (str_char == NULL)
-		return (NULL);
-	s = ft_strtrim(s, str_char);
-	free(str_char);
+	s = init_strtrim(s, c);
 	if (s == NULL)
 		return (NULL);
 	count = split_count(s, c);
