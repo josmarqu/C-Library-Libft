@@ -6,7 +6,7 @@
 /*   By: josmarqu <josmarqu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 15:00:22 by josmarqu          #+#    #+#             */
-/*   Updated: 2023/03/08 13:17:06 by josmarqu         ###   ########.fr       */
+/*   Updated: 2023/03/08 13:53:50 by josmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -376,7 +376,7 @@ typedef struct s_list
  * initialized with the value of the parameter 'content' and the
  * 'next' pointer is initialized to NULL.
  * 
- * @param content The content of the new node.
+ * @param content A pointer to the content of the new node.
  * @return t_list* The new node.
  */
 t_list		*ft_lstnew(void *content);
@@ -385,15 +385,14 @@ t_list		*ft_lstnew(void *content);
  * @brief  Adds the node 'new' at the beginning of the list.
  * 
  * @param lst The address of a pointer to the first node of a list.
- * @param new  The address of a pointer to the node to be added to 
- * the beginning of the list.
+ * @param new  A pointer to the node to be added to the beginning of the list.
  */
 void		ft_lstadd_front(t_list **lst, t_list *new);
 
 /**
  * @brief Counts the number of nodes in a list.
  * 
- * @param lst The beginning of the list.
+ * @param lst A pointer to the beginning of the list.
  * @return int The number of nodes in the list.
  */
 int			ft_lstsize(t_list *lst);
@@ -401,7 +400,7 @@ int			ft_lstsize(t_list *lst);
 /**
  * @brief Returns the last node of the list.
  * 
- * @param lst  The beginning of the list.
+ * @param lst  A pointer to the beginning of the list.
  * @return t_list* The last node of the list.
  */
 t_list		*ft_lstlast(t_list *lst);
@@ -410,8 +409,7 @@ t_list		*ft_lstlast(t_list *lst);
  * @brief Adds the node 'new' at the end of the list.
  * 
  * @param lst The address of a pointer to the first node of a list.
- * @param new The address of a pointer to the node to be added to 
- * the end of the list. 
+ * @param new  A pointer to the node to be added to the end of the list.
  */
 void		ft_lstadd_back(t_list **lst, t_list *new);
 
@@ -420,8 +418,7 @@ void		ft_lstadd_back(t_list **lst, t_list *new);
  * with the function 'del' given as a parameter and free the node.
  * 
  * @param lst The node to free.
- * @param del The address of the function used to delete the
- * content of the node.
+ * @param del A pointer to the function used to delete the content.
  */
 void		ft_lstdelone(t_list *lst, void (*del)(void*));
 
@@ -430,8 +427,15 @@ void		ft_lstdelone(t_list *lst, void (*del)(void*));
  * of that element, using the function 'del' and free.
  * 
  * @param lst The address of a pointer to an element.
- * @param del The address of the function used to delete the 
- * content of the element. 
+ * @param del A pointer to the function used to delete the content
  */
 void		ft_lstclear(t_list **lst, void (*del)(void*));
+
+/**
+ * @brief Iterates the list 'lst' and applies the function 'f' to the content
+ * 
+ * @param lst A pointer to the first node;
+ * @param f A pointer to the function used in each content of each node.
+ */
+void		ft_lstiter(t_list *lst, void (*f)(void *));
 #endif
