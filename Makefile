@@ -6,7 +6,7 @@
 #    By: josmarqu <josmarqu@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/09 15:38:05 by josmarqu          #+#    #+#              #
-#    Updated: 2023/03/08 12:38:06 by josmarqu         ###   ########.fr        #
+#    Updated: 2023/03/08 13:02:27 by josmarqu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,8 @@ ft_strjoin.c ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strmapi.c ft_strncmp.c ft_
 ft_striteri.c ft_strtrim.c ft_substr.c ft_tolower.c ft_toupper.c
 
 # Bonus source files
-BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c
+BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c \
+
 
 # Object files
 OBJS = $(SRCS:.c=.o)
