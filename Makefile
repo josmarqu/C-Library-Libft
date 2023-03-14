@@ -6,7 +6,7 @@
 #    By: josmarqu <josmarqu@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/09 15:38:05 by josmarqu          #+#    #+#              #
-#    Updated: 2023/03/08 19:57:09 by josmarqu         ###   ########.fr        #
+#    Updated: 2023/03/14 12:58:48 by josmarqu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,8 +21,8 @@ ft_strjoin.c ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strmapi.c ft_strncmp.c ft_
 ft_striteri.c ft_strtrim.c ft_substr.c ft_tolower.c ft_toupper.c ft_free_str_arr.c
 
 # Bonus source files
-BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c \
-ft_lstclear.c ft_lstiter.c ft_lstmap.c
+BONUS = ft_lstadd_back_bonus.c ft_lstadd_front_bonus.c ft_lstclear_bonus.c ft_lstdelone_bonus.c \
+ft_lstiter_bonus.c ft_lstlast_bonus.c ft_lstmap_bonus.c ft_lstnew_bonus.c ft_lstsize_bonus.c
 
 # Object files
 OBJS = $(SRCS:.c=.o)
@@ -44,7 +44,7 @@ all: $(NAME)
 
 # Compile the object files to create the library with the name set in the variable NAME
 $(NAME): $(OBJS)
-	@ar rc $(NAME) $(OBJS)
+	@ar rcs $(NAME) $(OBJS)
 	@echo "Library compiled"
 	
 # Generate the object files from the source files
@@ -58,7 +58,7 @@ $(NAME): $(OBJS)
 
 # Clean the object files
 clean:
-	@rm -f $(OBJS)
+	@rm -f $(OBJS) $(BONUS_OBJS)
 	@echo "Object files cleaned"
 
 # Clean the object files and the library
@@ -74,15 +74,3 @@ re: fclean all
 bonus: $(BONUS_OBJS)
 	@ar rc $(NAME) $(BONUS_OBJS)
 	@echo "Bonus added"
-
-# Rule for testing the library
-test: $(NAME)
-	@$(CC) $(CFLAGS) ft_test.c -L. -lft -o test
-	@./test
-	@echo "Test done"
-
-# Rule for testing the library with the bonus files
-test_bonus: bonus
-	@$(CC) $(CFLAGS) ft_test_bonus.c -L. -lft -o test_bonus
-	@./test_bonus
-	@echo "Test done"
